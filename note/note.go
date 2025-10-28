@@ -28,9 +28,11 @@ func (note Note) Save() error {
 	json, err := json.Marshal(note)
 
 	if err != nil {
+		fmt.Print("failed created json!")
 		return err
 	}
 
+	fmt.Print("success save data to file")
 	return os.WriteFile(fileName, json, 0644)
 }
 
